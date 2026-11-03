@@ -1,0 +1,13 @@
+{
+  "name": "geopaper-gis-preprint-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Framework-free interactive GIS/WebGIS academic project page template",
+  "scripts": {
+    "test": "node --check assets/app.js && node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
