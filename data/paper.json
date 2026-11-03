@@ -1,0 +1,22 @@
+{
+  "_comment": "Edit this file for each new study. Null URL = disabled / pending resource. The page does not invent publication records.",
+  "title": "GeoPaper: An Interactive & Reproducible GIS / WebGIS Research Template",
+  "subtitle": "Một khung công bố nghiên cứu không gian: từ dữ liệu, ngữ nghĩa địa lý tới mô phỏng bản đồ và đánh giá có thể tái lập.",
+  "authors": [
+    { "name": "GeoPaper contributors", "affiliation": "1" }
+  ],
+  "affiliations": [
+    "Example research institution — replace this line before publishing"
+  ],
+  "abstract": "This reusable GIS/WebGIS preprint template demonstrates a reproducible spatial pipeline covering geodata provenance, coordinate reference systems, geospatial semantics, exploratory mapping and evaluation protocols. The interactive map uses only synthetic observations and an illustrative deterministic index; it does not report validated model performance, environmental conditions or empirical results. Replace this abstract with a real research question, method, dataset, contributions, results and limitations before submitting a preprint.",
+  "year": 2026,
+  "bibtexKey": "geopaper_template_2026",
+  "citationNote": "Reusable demonstration template; not a published study",
+  "paperUrl": null,
+  "arxivUrl": null,
+  "codeUrl": "https://github.com/xulytiengviet/paper",
+  "modelsUrl": null,
+  "imagesUrl": "#figures",
+  "demoUrl": "#explorer",
+  "doi": null
+}
