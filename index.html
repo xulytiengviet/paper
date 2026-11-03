@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9f6">
+  <meta name="description" content="GeoPaper — mẫu trang preprint khoa học GIS/WebGIS, có bản đồ tương tác, phương pháp tái lập, benchmark và BibTeX.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GeoPaper · GIS/WebGIS Preprint Template">
+  <meta property="og:description" content="A reusable, research-first academic project page for reproducible geospatial science.">
+  <title>GeoPaper — GIS / WebGIS Research Preprint Template</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+  <header class="site-header">
+    <div class="nav-shell wrap">
+      <a href="#top" class="brand" aria-label="GeoPaper — về đầu trang"><span class="brand-mark" aria-hidden="true">▦</span>Geo<span>Paper</span><small>GIS / WebGIS</small></a>
+      <nav class="primary-nav" aria-label="Bảy mục nghiên cứu">
+        <a href="#overview">Overview</a>
+        <a href="#explorer">Explorer</a>
+        <a href="#method">Method</a>
+        <a href="#semantics">Semantics</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#models">Models</a>
+        <a href="#cite">Cite</a>
+      </nav>
+      <a class="nav-repo" href="https://github.com/xulytiengviet/paper" target="_blank" rel="noopener noreferrer" aria-label="Mở mã nguồn GitHub">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="paper-title">
+      <div class="hero-main">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> REUSABLE ACADEMIC PROJECT PAGE <span class="eyebrow-divider">/</span> GIS · WEBGIS · SPATIAL AI</p>
+        <div class="paper-status"><span class="status-dot"></span> PREPRINT TEMPLATE <span class="status-divider">·</span> Example content, not a published paper</div>
+        <h1 id="paper-title">GeoPaper: An Interactive &amp; Reproducible <em>GIS / WebGIS</em> Research Template</h1>
+        <p class="subtitle" id="paper-subtitle">Một khung công bố nghiên cứu không gian: từ dữ liệu, ngữ nghĩa địa lý tới mô phỏng bản đồ và đánh giá có thể tái lập.</p>
+        <div class="paper-authors" id="paper-authors" aria-label="Tác giả"><span>Research author(s) <sup>1</sup></span></div>
+        <div class="affiliations" id="paper-affiliations"><sup>1</sup> Affiliation / Institution — cập nhật trong data/paper.json</div>
+        <div class="resource-bar" aria-label="Tài nguyên nghiên cứu">
+          <a class="resource-button unavailable" data-resource="paper" aria-disabled="true" title="Chưa có bài báo PDF">📄 <span>Paper</span><small>pending</small></a>
+          <a class="resource-button unavailable" data-resource="arxiv" aria-disabled="true" title="Chưa có mã arXiv">✳ <span>arXiv</span><small>pending</small></a>
+          <a class="resource-button" data-resource="code" href="https://github.com/xulytiengviet/paper" target="_blank" rel="noopener noreferrer">⌘ <span>Code</span></a>
+          <a class="resource-button unavailable" data-resource="models" aria-disabled="true" title="Chưa có mô hình phát hành">🤗 <span>Models</span><small>pending</small></a>
+          <a class="resource-button" data-resource="images" href="#figures">▧ <span>Images</span></a>
+          <a class="resource-button" data-resource="demo" href="#explorer">◉ <span>Demo</span></a>
+        </div>
+        <p class="resource-help">Tài nguyên chưa phát hành được đánh dấu <strong>pending</strong>, không dẫn tới liên kết giả. Thay URL tại <code>data/paper.json</code> khi có công bố thực.</p>
+      </div>
+      <aside class="hero-aside" aria-label="Minh họa bản đồ phân lớp">
+        <div class="illustration-head"><span>FIG. 00 — RESEARCH LANDSCAPE</span><span class="live-indicator"><span></span> SYNTHETIC</span></div>
+        <svg viewBox="0 0 550 360" role="img" aria-labelledby="hero-graphic-title" class="terrain-svg">
+          <title id="hero-graphic-title">Minh họa các lớp lưới, tuyến sông, vùng đa giác và điểm quan trắc giả lập</title>
+          <defs><pattern id="terrain-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#b6c9c6" stroke-width=".75" opacity=".7"/></pattern><linearGradient id="land-grad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e3eee5"/><stop offset="1" stop-color="#accfc3"/></linearGradient></defs>
+          <rect width="550" height="360" fill="#edf5ef"/><rect width="550" height="360" fill="url(#terrain-grid)"/>
+          <path d="M-30 80 C90 45 135 80 210 45 S360 45 580 -15 M-30 115 C80 80 155 116 220 82 S398 65 580 20 M-30 160 C80 112 175 150 235 125 S405 120 580 80 M-30 218 C130 155 178 197 253 168 S407 175 570 136 M-25 274 C126 211 192 244 275 205 S455 220 570 191 M-20 318 C145 250 198 292 285 260 S448 268 585 235" fill="none" stroke="#9abcb0" stroke-width="1.2"/>
+          <path d="M78 98 171 74 253 116 280 210 202 269 99 224Z" fill="url(#land-grad)" stroke="#80aa94" stroke-width="2"/>
+          <path d="M320 81 434 105 485 187 440 285 331 252 292 171Z" fill="#e5d6b0" fill-opacity=".64" stroke="#c39d5c" stroke-width="2"/>
+          <path d="M-16 308 C118 273 130 187 220 160 S353 183 412 97 S502 48 570 26" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round"/>
+          <path d="M-16 308 C118 273 130 187 220 160 S353 183 412 97 S502 48 570 26" fill="none" stroke="#6eaed1" stroke-width="11" stroke-linecap="round"/>
+          <path d="M65 24 95 99 180 112 247 248 352 324 M130 347 207 254 350 210 525 244" fill="none" stroke="#d3a460" stroke-width="4" stroke-dasharray="10 7"/>
+          <g fill="#123e44" stroke="#fff" stroke-width="3"><circle cx="117" cy="132" r="9"/><circle cx="186" cy="206" r="9"/><circle cx="238" cy="106" r="9"/><circle cx="342" cy="166" r="9"/><circle cx="428" cy="227" r="9"/><circle cx="469" cy="127" r="9"/></g>
+          <g font-family="monospace" font-size="11" fill="#35616a"><text x="27" y="36">CRS / EPSG:4326</text><text x="338" y="338">MULTI-LAYER ANALYSIS ↗</text></g>
+          <g transform="translate(450 18)"><rect width="78" height="52" rx="7" fill="#fff" opacity=".94"/><path d="M15 40V12M15 12L10 22M15 12L20 22" stroke="#123e44" stroke-width="2" fill="none"/><text x="30" y="21" fill="#123e44" font-size="11" font-weight="700">N</text><text x="30" y="38" fill="#6b827d" font-size="9">0–10 km*</text></g>
+        </svg>
+        <div class="illustration-footer"><span><i class="legend-dot legend-water"></i> Hydro</span><span><i class="legend-dot legend-point"></i> Sites</span><span><i class="legend-dot legend-zone"></i> Zones</span><strong>* Schematic, not to scale</strong></div>
+      </aside>
+      <div class="hero-bottom">
+        <div><strong>07</strong><span>Research sections</span></div>
+        <div><strong>03</strong><span>Spatial geometry types</span></div>
+        <div><strong>04</strong><span>Evaluation dimensions</span></div>
+        <div><strong>100%</strong><span>Static frontend · no backend</span></div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="overview" aria-labelledby="overview-title">
+      <div class="wrap">
+        <div class="section-heading"><span class="section-kicker">01 / OVERVIEW</span><h2 id="overview-title">From geospatial evidence to reproducible knowledge</h2><p>Phần mở đầu dành cho đóng góp, câu hỏi nghiên cứu, dữ liệu và phạm vi áp dụng. Đây là <strong>nội dung minh họa</strong>, không phải kết quả thực nghiệm đã công bố.</p></div>
+        <div class="abstract-panel"><span class="panel-label">ABSTRACT</span><p id="paper-abstract">This page is a reusable template for GIS and WebGIS research. It demonstrates a transparent pipeline linking spatial data, topology, semantic annotation, exploratory mapping and reproducible evaluation. All observations displayed by the interactive explorer are synthetic, so they must not be used to infer actual environmental conditions.</p><div class="keyword-row"><span>KEYWORDS</span><b>GIS</b><b>WebGIS</b><b>Spatial semantics</b><b>OGC APIs</b><b>Reproducibility</b></div></div>
+        <div class="four-up"><article class="feature-card"><div class="feature-icon">◈</div><h3>Geospatial evidence</h3><p>GeoJSON, OGC API Features, raster, sensor streams; luôn gắn nguồn và thời điểm.</p></article><article class="feature-card"><div class="feature-icon">⌖</div><h3>CRS &amp; topology</h3><p>Kiểm tra EPSG, hình học hợp lệ, chồng lấn và đơn vị đo trước phân tích.</p></article><article class="feature-card"><div class="feature-icon">▤</div><h3>Interpretable outputs</h3><p>Lớp bản đồ và giải thích ngữ nghĩa đi kèm phương pháp tính có thể kiểm toán.</p></article><article class="feature-card"><div class="feature-icon">◎</div><h3>Reproducible research</h3><p>Seed, phiên bản dữ liệu, metrics, baseline và giới hạn được ghi rõ.</p></article></div>
+        <div id="figures" class="figure-panel"><div class="figure-caption"><span>FIG. 01</span><strong>GIS/WebGIS research pipeline</strong><small>Conceptual overview · editable methodology</small></div><div class="pipeline-figure" role="img" aria-label="Chuỗi xử lý từ nguồn dữ liệu đến chuẩn hóa không gian, mô hình và đánh giá"><div><small>01</small><strong>INPUT</strong><span>Vector / raster / IoT</span></div><b aria-hidden="true">→</b><div><small>02</small><strong>HARMONIZE</strong><span>CRS / QA / topology</span></div><b aria-hidden="true">→</b><div><small>03</small><strong>ANALYZE</strong><span>Spatial rules / AI</span></div><b aria-hidden="true">→</b><div><small>04</small><strong>VALIDATE</strong><span>Metrics / provenance</span></div><b aria-hidden="true">→</b><div><small>05</small><strong>PUBLISH</strong><span>Map / API / paper</span></div></div><p class="figure-note">Hình sơ đồ tự vẽ, không tái sử dụng hình minh họa hoặc dữ liệu của DE-FM.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="explorer" aria-labelledby="explorer-title">
+      <div class="wrap">
+        <div class="section-heading"><span class="section-kicker">02 / EXPLORER</span><h2 id="explorer-title">Interactive geospatial explorer</h2><p>Mô phỏng có lớp điểm, vùng và tuyến với các tình huống giả lập. Kéo thời gian, chuyển chế độ phân tích, bật/tắt lớp hoặc nhấn điểm trên bản đồ để khám phá thuộc tính.</p></div>
+        <div class="disclaimer" role="note"><strong>⚠ Demo only.</strong> Dữ liệu, ranh giới, chỉ số rủi ro và kết quả đều <strong>tổng hợp để trình diễn</strong>; không phải đo đạc, dự báo hoặc dữ liệu hành chính thực. Nền OpenStreetMap (nếu tải được) chỉ cung cấp ngữ cảnh địa lý.</div>
+        <div class="explorer-shell">
+          <aside class="explorer-controls">
+            <div class="controls-top"><span class="mini-label">EXPERIMENT CONTROLS</span><span class="control-version">DEMO v1</span></div>
+            <label for="scenarioSelect">Research scenario</label>
+            <select id="scenarioSelect"><option value="rain">Hydrology · precipitation</option><option value="heat">Urban · heat exposure</option><option value="access">Services · accessibility</option></select>
+            <label for="modeSelect">Visualization</label>
+            <select id="modeSelect"><option value="risk">Relative index (synthetic)</option><option value="coverage">Coverage / proximity</option></select>
+            <div class="range-title"><label for="yearRange">Simulation year</label><output id="yearOutput" for="yearRange">2024</output></div>
+            <input id="yearRange" type="range" min="2023" max="2026" step="1" value="2024">
+            <div class="range-labels"><span>2023</span><span>2026</span></div>
+            <fieldset class="layer-control"><legend>Visible layers</legend><label><input type="checkbox" id="layerSites" checked> <span class="swatch dot-swatch"></span> Monitoring sites</label><label><input type="checkbox" id="layerZones" checked> <span class="swatch zone-swatch"></span> Analysis polygons</label><label><input type="checkbox" id="layerRoutes" checked> <span class="swatch route-swatch"></span> Connectivity lines</label></fieldset>
+            <div class="control-actions"><button class="button button-primary" id="runDemo" type="button">▶ Run simulation</button><button class="button button-ghost" id="resetDemo" type="button">↺ Reset</button></div>
+            <p class="side-footnote">Client-side calculations only. No upload or server storage.</p>
+          </aside>
+          <div class="map-workspace">
+            <div class="map-toolbar"><div><span class="map-live-icon"></span><strong>Spatial sandbox</strong><span class="map-subtle">Mekong Delta · illustrative</span></div><span id="mapStatus" role="status">Initializing map…</span></div>
+            <div id="map" role="application" aria-label="Bản đồ nghiên cứu GIS có thể phóng to và chọn đối tượng"><div id="mapFallback" class="map-fallback" hidden><strong>Map tiles unavailable</strong><span>The explorer requires Leaflet and network access. Data, controls and methodology remain available on this page.</span></div></div>
+            <div class="map-legend"><span><i class="legend-pill legend-low"></i> Low</span><span><i class="legend-pill legend-medium"></i> Moderate</span><span><i class="legend-pill legend-high"></i> High</span><small>Normalized toy index · not empirical</small></div>
+            <div class="explorer-stats"><div><small>VISIBLE SITES</small><strong id="metricSites">—</strong></div><div><small>MEAN TOY INDEX</small><strong id="metricIndex">—</strong></div><div><small>SCENARIO</small><strong id="metricScenario">—</strong></div></div>
+            <div class="inspect-panel"><span class="mini-label">FEATURE INSPECTOR</span><p id="inspectResult" aria-live="polite">Chọn một điểm trên bản đồ để xem ID, tọa độ, chỉ số giả lập và nhãn ngữ nghĩa.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="method" aria-labelledby="method-title"><div class="wrap">
+      <div class="section-heading"><span class="section-kicker">03 / METHOD</span><h2 id="method-title">Methodology &amp; reproducible pipeline</h2><p>Một cấu trúc có thể thay thế cho từng bài báo cụ thể. Công thức dưới đây là ví dụ mô phỏng, không phải mô hình dự báo đã xác thực.</p></div>
+      <div class="method-grid">
+        <article class="method-step"><span>STEP 01 / DATA</span><h3>Ingest &amp; provenance</h3><p>Ghi URL dữ liệu, giấy phép, ngày thu thập, schema, dữ liệu thiếu và cách truy xuất.</p><code>GeoJSON · GeoTIFF · OGC API</code></article>
+        <article class="method-step"><span>STEP 02 / SPACE</span><h3>Normalize &amp; validate</h3><p>Kiểm tra CRS và chuyển đổi rõ ràng; xác thực hình học, hướng vòng, đơn vị và quan hệ topology.</p><code>EPSG:4326 → project CRS</code></article>
+        <article class="method-step"><span>STEP 03 / REASON</span><h3>Spatial inference</h3><p>Áp dụng baseline quy tắc, đặc trưng láng giềng và lớp ngữ nghĩa; tránh trộn lẫn dữ liệu thực với ví dụ.</p><code>score = clamp(base + Δt + δ)</code></article>
+        <article class="method-step"><span>STEP 04 / AUDIT</span><h3>Evaluate &amp; disclose</h3><p>So sánh cùng tập kiểm thử; báo cáo vùng nghiên cứu, mẫu, CI, sai số tọa độ và độ trễ.</p><code>IoU · F1 · p95 · CRS QA</code></article>
+      </div>
+      <div class="formula-panel"><div><span class="panel-label">TOY-SIMULATION FORMULA</span><p>Index(s, t, c) = clip[ base(s) + 4(t − 2024) + δ(c), 0, 100 ]</p><small>Trong đó s là địa điểm giả lập, t là năm mô phỏng, c là tình huống. Công thức chỉ được dùng để chứng minh tương tác UI.</small></div><div class="method-tags"><span>Deterministic</span><span>No ML weights</span><span>No forecasting claims</span><span>Reproducible fixtures</span></div></div>
+    </div></section>
+
+    <section class="section" id="semantics" aria-labelledby="semantics-title"><div class="wrap">
+      <div class="section-heading"><span class="section-kicker">04 / SEMANTICS</span><h2 id="semantics-title">Spatial semantics &amp; interpretable layers</h2><p>Giải thích đối tượng địa lý theo ngữ cảnh: các điểm có thể mang nhãn khác nhau tùy chủ đề nghiên cứu, thang không gian và mối quan hệ lân cận.</p></div>
+      <div class="semantics-layout"><div class="semantic-choices" role="group" aria-label="Chọn hệ ngữ nghĩa"><button type="button" class="semantic-choice is-active" data-semantic="hydro" aria-pressed="true"><span>01</span><strong>Hydrology</strong><small>Lưu vực, địa hình, lưu lượng</small></button><button type="button" class="semantic-choice" data-semantic="urban" aria-pressed="false"><span>02</span><strong>Urban fabric</strong><small>Sử dụng đất, mật độ, đảo nhiệt</small></button><button type="button" class="semantic-choice" data-semantic="network" aria-pressed="false"><span>03</span><strong>Connectivity</strong><small>Tuyến đường, nút, tiếp cận</small></button></div><div class="semantic-detail"><span class="mini-label">SEMANTIC GRAPH / INTERPRETATION</span><h3 id="semanticTitle">Hydrological context</h3><p id="semanticDescription">Mô tả các điểm quan trắc theo quan hệ gần sông, trong lưu vực và theo thời gian. Mối quan hệ chỉ mang tính minh họa.</p><div id="semanticGraph" class="semantic-graph" aria-live="polite"><span>Sensor</span><b>→ near →</b><span>Waterway</span><b>→ within →</b><span>Basin</span></div><div class="semantic-rule"><strong>Audit question</strong><p id="semanticAudit">Khoảng cách được tính trong hệ quy chiếu nào? Nguồn nào chứng minh quan hệ gần?</p></div></div></div>
+    </div></section>
+
+    <section class="section section-muted" id="benchmarks" aria-labelledby="benchmarks-title"><div class="wrap">
+      <div class="section-heading"><span class="section-kicker">05 / BENCHMARKS</span><h2 id="benchmarks-title">Evaluation protocol before performance claims</h2><p>Mẫu trình bày benchmark có tiêu chí, baseline và cách đo. Các ô chưa thực nghiệm hiển thị <strong>Not reported</strong> thay vì điền số liệu giả.</p></div>
+      <div class="benchmark-header"><div><span class="mini-label">PROTOCOL STATUS</span><h3>Benchmark plan · awaiting real runs</h3></div><span class="bench-pill">No verified measurements</span></div>
+      <div class="table-scroll"><table class="research-table"><thead><tr><th>Task</th><th>Metric</th><th>Baseline</th><th>Validation</th><th>Result</th></tr></thead><tbody><tr><td>Spatial classification</td><td>Macro F1 / accuracy</td><td>Majority class, rule baseline</td><td>Region-disjoint split</td><td><span class="not-reported">Not reported</span></td></tr><tr><td>Geospatial segmentation</td><td>IoU / Dice</td><td>Threshold / traditional GIS</td><td>Independent polygons</td><td><span class="not-reported">Not reported</span></td></tr><tr><td>WebGIS responsiveness</td><td>p50 / p95 latency</td><td>Static rendering</td><td>Fixed browser &amp; hardware</td><td><span class="not-reported">Not reported</span></td></tr><tr><td>Spatial data quality</td><td>CRS / topology errors</td><td>Unvalidated dataset</td><td>Known-error geometry suite</td><td><span class="not-reported">Not reported</span></td></tr></tbody></table></div>
+      <div class="protocol-grid"><div><strong>01 · Dataset</strong><p>Link, license, split, temporal leakage checks.</p></div><div><strong>02 · Environment</strong><p>Browser, CPU/GPU, memory, tool versions.</p></div><div><strong>03 · Uncertainty</strong><p>Confidence intervals, seeds, significance.</p></div><div><strong>04 · Reproduction</strong><p>Commands, data hashes, scripts, logs.</p></div></div>
+    </div></section>
+
+    <section class="section" id="models" aria-labelledby="models-title"><div class="wrap">
+      <div class="section-heading"><span class="section-kicker">06 / MODELS &amp; DATA</span><h2 id="models-title">Artifacts, layers &amp; model registry</h2><p>Tách bản trình diễn frontend khỏi các mô hình học máy và dữ liệu thực. Mỗi asset cần phiên bản, quyền sử dụng và bộ đánh giá riêng.</p></div>
+      <div class="table-scroll"><table class="research-table"><thead><tr><th>Artifact</th><th>Purpose</th><th>Format</th><th>Status</th><th>Access</th></tr></thead><tbody><tr><td><strong>Toy sites + zones</strong></td><td>Interactive map fixtures</td><td>GeoJSON</td><td><span class="artifact-ready">Included · synthetic</span></td><td><a href="data/demo.geojson" download>Download ↗</a></td></tr><tr><td><strong>Rule simulator</strong></td><td>Deterministic client-side index</td><td>JavaScript</td><td><span class="artifact-ready">Included · demo</span></td><td><a href="https://github.com/xulytiengviet/paper/blob/main/assets/app.js" target="_blank" rel="noopener noreferrer">View code ↗</a></td></tr><tr><td><strong>Trained GeoAI model</strong></td><td>Actual predictive research</td><td>ONNX / PyTorch</td><td>Not released</td><td>—</td></tr><tr><td><strong>Verified benchmark</strong></td><td>Comparative evaluation</td><td>CSV / Parquet</td><td>Not measured</td><td>—</td></tr></tbody></table></div>
+      <div class="quickstart"><div><span class="mini-label">QUICK START</span><h3>Clone. Edit metadata. Publish.</h3><p>Không yêu cầu Node.js để chạy trang. Dùng local HTTP server khi cần tải GeoJSON, hoặc xuất bản trực tiếp qua GitHub Pages.</p></div><div class="code-panel"><code>git clone https://github.com/xulytiengviet/paper.git<br>cd paper<br>python -m http.server 8080</code><button id="copySetup" type="button" class="copy-small">Copy</button></div></div>
+    </div></section>
+
+    <section class="section section-muted" id="cite" aria-labelledby="cite-title"><div class="wrap">
+      <div class="section-heading"><span class="section-kicker">07 / CITE</span><h2 id="cite-title">Citation &amp; scientific transparency</h2><p>BibTeX mẫu, có nút sao chép và tải tệp. Khi có bài báo thật, cập nhật tên, tác giả, năm, DOI và arXiv trong <code>data/paper.json</code>.</p></div>
+      <div class="citation-card"><div class="citation-toolbar"><span>BIBTEX / TEMPLATE ENTRY</span><div><button id="copyBib" type="button" class="copy-small">⧉ Copy BibTeX</button><button id="downloadBib" type="button" class="copy-small">↓ Download .bib</button></div></div><pre><code id="bibtex">@misc{geopaper_template_2026,
+  title = {GeoPaper: GIS / WebGIS Preprint Template},
+  author = {{GeoPaper contributors}},
+  year = {2026},
+  howpublished = {GitHub repository},
+  url = {https://github.com/xulytiengviet/paper},
+  note = {Reusable demonstration template; not a published study}
+}</code></pre><p id="citeStatus" role="status" class="cite-status">This entry describes the repository template, not a peer-reviewed publication.</p></div>
+    </div></section>
+
+    <section class="section acknowledgments" id="acknowledgments" aria-labelledby="ack-title"><div class="wrap acknowledgments-grid"><div><span class="section-kicker">ACKNOWLEDGMENTS</span><h2 id="ack-title">Credits, openness &amp; licensing</h2></div><div class="ack-text"><p>Trang được phát triển bởi dự án <a href="https://github.com/xulytiengviet/paper">xulytiengviet/paper</a> như một <strong>mẫu công bố khoa học tái sử dụng</strong>. Cách tổ chức nội dung được tham khảo từ <a href="https://de-fm.github.io/" target="_blank" rel="noopener noreferrer">DeFM academic project page</a>, vốn ghi công <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> và <a href="https://nerfies.github.io/" target="_blank" rel="noopener noreferrer">Nerfies</a>. Thiết kế, mã và hình sơ đồ của GeoPaper là triển khai riêng, không sao chép tài sản hình ảnh của họ.</p><p>Đoạn mã nguồn GeoPaper dùng <a href="LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>; nội dung và hình minh họa nguyên gốc của website theo <a href="CONTENT_LICENSE.md" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, ngoại trừ dữ liệu, bản đồ và tài sản bên thứ ba được ghi công riêng. Bản đồ nền © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>. Khi tái sử dụng, hãy cập nhật ghi nhận và tài trợ thực tế, không gán tài trợ khi chưa được xác nhận.</p><p class="ack-warning">Research integrity: preprint ≠ peer-reviewed paper; synthetic simulation ≠ real-world scientific evidence.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span class="brand footer-brand"><span class="brand-mark">▦</span>Geo<span>Paper</span></span><span>Academic GIS / WebGIS research template · <span id="footerYear">2026</span></span><div><a href="#top">Back to top ↑</a><a href="https://de-fm.github.io/" target="_blank" rel="noopener noreferrer">Layout reference ↗</a><a href="https://github.com/xulytiengviet/paper" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div></footer>
+</body>
+</html>
