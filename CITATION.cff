@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "This repository is a website template, not a scientific article. Cite the actual paper when the template is adapted."
+title: "GeoPaper: Interactive GIS/WebGIS Academic Preprint Website Template"
+type: software
+authors:
+  - name: "xulytiengviet contributors"
+repository-code: "https://github.com/xulytiengviet/paper"
+url: "https://xulytiengviet.github.io/paper/"
+license: MIT
+date-released: 2026-11-03
+keywords:
+  - GIS
+  - WebGIS
+  - geospatial
+  - preprint
+  - academic website
+  - reproducibility
