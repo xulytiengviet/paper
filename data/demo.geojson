@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "name": "geopaper_synthetic_fixture",
+  "description": "Completely synthetic study fixture. Coordinates are illustrative placements, NOT observation stations, official boundaries or real networks.",
+  "license": "CC0-1.0 (synthetic fixture created for GeoPaper)",
+  "crs_notice": "RFC 7946 geographic longitude-latitude (WGS84, EPSG:4326); display map tiles use Web Mercator.",
+  "features": [
+    {"type":"Feature","id":"P01","geometry":{"type":"Point","coordinates":[106.38,10.25]},"properties":{"kind":"site","name":"Synthetic Site 01","base":23,"coverage":84,"semantic":"sensor → water"}},
+    {"type":"Feature","id":"P02","geometry":{"type":"Point","coordinates":[106.62,10.11]},"properties":{"kind":"site","name":"Synthetic Site 02","base":57,"coverage":65,"semantic":"sensor → water"}},
+    {"type":"Feature","id":"P03","geometry":{"type":"Point","coordinates":[106.08,10.39]},"properties":{"kind":"site","name":"Synthetic Site 03","base":70,"coverage":57,"semantic":"sensor → land"}},
+    {"type":"Feature","id":"P04","geometry":{"type":"Point","coordinates":[105.92,10.08]},"properties":{"kind":"site","name":"Synthetic Site 04","base":42,"coverage":76,"semantic":"sensor → road"}},
+    {"type":"Feature","id":"P05","geometry":{"type":"Point","coordinates":[106.70,9.87]},"properties":{"kind":"site","name":"Synthetic Site 05","base":77,"coverage":39,"semantic":"sensor → land"}},
+    {"type":"Feature","id":"P06","geometry":{"type":"Point","coordinates":[105.77,10.40]},"properties":{"kind":"site","name":"Synthetic Site 06","base":18,"coverage":88,"semantic":"sensor → road"}},
+    {"type":"Feature","id":"P07","geometry":{"type":"Point","coordinates":[106.20,9.88]},"properties":{"kind":"site","name":"Synthetic Site 07","base":66,"coverage":51,"semantic":"sensor → water"}},
+    {"type":"Feature","id":"P08","geometry":{"type":"Point","coordinates":[106.47,10.53]},"properties":{"kind":"site","name":"Synthetic Site 08","base":33,"coverage":73,"semantic":"sensor → land"}},
+    {"type":"Feature","id":"P09","geometry":{"type":"Point","coordinates":[105.58,9.97]},"properties":{"kind":"site","name":"Synthetic Site 09","base":52,"coverage":49,"semantic":"sensor → road"}},
+    {"type":"Feature","id":"Z01","geometry":{"type":"Polygon","coordinates":[[[105.65,10.00],[106.18,10.00],[106.19,10.51],[105.65,10.51],[105.65,10.00]]]},"properties":{"kind":"zone","name":"Illustrative analysis polygon A"}},
+    {"type":"Feature","id":"Z02","geometry":{"type":"Polygon","coordinates":[[[106.23,9.76],[106.87,9.76],[106.87,10.59],[106.23,10.59],[106.23,9.76]]]},"properties":{"kind":"zone","name":"Illustrative analysis polygon B"}},
+    {"type":"Feature","id":"R01","geometry":{"type":"LineString","coordinates":[[105.58,10.42],[105.96,10.37],[106.34,10.24],[106.73,9.89]]},"properties":{"kind":"route","name":"Illustrative connectivity path"}},
+    {"type":"Feature","id":"R02","geometry":{"type":"LineString","coordinates":[[105.67,9.94],[106.16,9.90],[106.55,10.11],[106.72,10.46]]},"properties":{"kind":"route","name":"Illustrative connectivity path B"}}
+  ]
+}
